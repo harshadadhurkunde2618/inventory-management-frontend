@@ -68,27 +68,27 @@ function Dashboard() {
 
   return (
     <div>
-      <h1 className="text-2xl font-bold text-gray-800 mb-6">Dashboard</h1>
+      <h1 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4 sm:mb-6">Dashboard</h1>
 
       {/* Stat Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
         {cards.map((card) => {
           const Icon = card.icon;
           return (
-            <div key={card.label} className="bg-white p-6 rounded-lg shadow">
+            <div key={card.label} className="bg-white p-4 sm:p-6 rounded-lg shadow">
               <div className="flex items-center justify-between mb-2">
                 <p className="text-sm text-gray-500">{card.label}</p>
                 <Icon size={20} className={`text-${card.color}-500`} />
               </div>
-              <p className="text-2xl font-bold text-gray-800">{card.value}</p>
+              <p className="text-xl sm:text-2xl font-bold text-gray-800 break-all">{card.value}</p>
             </div>
           );
         })}
       </div>
 
       {/* Sales Trend Chart */}
-      <div className="bg-white p-6 rounded-lg shadow">
-        <h2 className="text-lg font-semibold text-gray-800 mb-4">
+      <div className="bg-white p-4 sm:p-6 rounded-lg shadow">
+        <h2 className="text-base sm:text-lg font-semibold text-gray-800 mb-4">
           Sales Trend (Last 30 Days)
         </h2>
         {salesTrend.length === 0 ? (
